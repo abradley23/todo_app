@@ -1,0 +1,413 @@
+  [1m[35m (24.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (47.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (75.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTodoItems (20190809213048)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "todo_items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190809213048"]]
+  [1m[35m (23.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-09 21:40:22.552022"], ["updated_at", "2019-08-09 21:40:22.552022"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /Users/adlaibradley/.rbenv/versions/2.6.3/bin/rake:23)
+Started GET "/" for ::1 at 2019-08-09 18:27:57 -0400
+  [1m[35m (13.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/adlaibradley/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.0.rc2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/adlaibradley/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.0.rc2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 74.5ms | Allocations: 489)
+Completed 200 OK in 238ms (Views: 134.9ms | ActiveRecord: 0.0ms | Allocations: 2880)
+
+
+Started GET "/show" for ::1 at 2019-08-09 18:28:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/show"):
+  
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0.rc2) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/todo_items" for ::1 at 2019-08-09 18:28:30 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.7ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1249)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/adlaibradley/Desktop/wyncode/c34/hw/todo/public/packs
+Completed 200 OK in 45821ms (Views: 45672.0ms | ActiveRecord: 1.4ms | Allocations: 1346291)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:30:05 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.3ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 870)
+Completed 200 OK in 105ms (Views: 101.3ms | ActiveRecord: 0.3ms | Allocations: 7690)
+
+
+Started GET "/todo_items/new" for ::1 at 2019-08-09 18:30:37 -0400
+Processing by TodoItemsController#new as HTML
+  Rendering todo_items/new.html.erb within layouts/application
+  Rendered todo_items/_form.html.erb (Duration: 614.1ms | Allocations: 6625)
+  Rendered todo_items/new.html.erb within layouts/application (Duration: 616.3ms | Allocations: 6973)
+Completed 200 OK in 679ms (Views: 663.7ms | ActiveRecord: 1.0ms | Allocations: 16104)
+
+
+Started POST "/todo_items" for ::1 at 2019-08-09 18:30:43 -0400
+Processing by TodoItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"hxfALIOvU7ytUhLsOpXgayn3v+yNfnKT0Ga7IjHyLmlwW+elEB3Q1n6tVDwElRSN5lWbJEOEH1lIGkBDU/RmnA==", "todo_item"=>{"description"=>"New task"}, "commit"=>"Create Todo item"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todo_items_controller.rb:30:in `block in create'
+  [1m[36mTodoItem Create (55.8ms)[0m  [1m[32mINSERT INTO "todo_items" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "New task"], ["created_at", "2019-08-09 22:30:43.190691"], ["updated_at", "2019-08-09 22:30:43.190691"]]
+  ↳ app/controllers/todo_items_controller.rb:30:in `block in create'
+  [1m[35m (68.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todo_items_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/todo_items/1
+Completed 302 Found in 137ms (ActiveRecord: 124.7ms | Allocations: 2769)
+
+
+Started GET "/todo_items/1" for ::1 at 2019-08-09 18:30:43 -0400
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.3ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/todo_items_controller.rb:67:in `set_todo_item'
+  Rendering todo_items/show.html.erb within layouts/application
+  Rendered todo_items/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 824)
+Completed 200 OK in 65ms (Views: 18.8ms | ActiveRecord: 0.3ms | Allocations: 9194)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:30:46 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 982)
+Completed 200 OK in 40ms (Views: 36.3ms | ActiveRecord: 0.2ms | Allocations: 6949)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:33:05 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 987)
+Completed 200 OK in 78ms (Views: 75.7ms | ActiveRecord: 0.2ms | Allocations: 10481)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:33:11 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.8ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 739)
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.8ms | Allocations: 6610)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:33:20 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 730)
+Completed 200 OK in 48ms (Views: 46.8ms | ActiveRecord: 0.2ms | Allocations: 9444)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:34:12 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.3ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 730)
+Completed 200 OK in 1210ms (Views: 1207.2ms | ActiveRecord: 0.3ms | Allocations: 9621)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:34:46 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.3ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 981)
+Completed 200 OK in 90ms (Views: 85.2ms | ActiveRecord: 0.3ms | Allocations: 10790)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:35:06 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 980)
+Completed 200 OK in 58ms (Views: 56.0ms | ActiveRecord: 0.2ms | Allocations: 10798)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:35:38 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.3ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 739)
+Completed 200 OK in 134ms (Views: 132.4ms | ActiveRecord: 0.3ms | Allocations: 9629)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:35:47 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 730)
+Completed 200 OK in 45ms (Views: 43.5ms | ActiveRecord: 0.2ms | Allocations: 10855)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:37:02 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (1.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 753)
+Completed 200 OK in 45ms (Views: 43.0ms | ActiveRecord: 1.2ms | Allocations: 10069)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:37:14 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 730)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.2ms | Allocations: 10046)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:37:36 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.3ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 730)
+Completed 200 OK in 60ms (Views: 58.1ms | ActiveRecord: 0.3ms | Allocations: 6659)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:43:09 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.3ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 746)
+Completed 200 OK in 1013ms (Views: 1011.5ms | ActiveRecord: 0.3ms | Allocations: 9638)
+
+
+Started GET "/todo_items/new" for ::1 at 2019-08-09 18:43:13 -0400
+Processing by TodoItemsController#new as HTML
+  Rendering todo_items/new.html.erb within layouts/application
+  Rendered todo_items/_form.html.erb (Duration: 33.2ms | Allocations: 836)
+  Rendered todo_items/new.html.erb within layouts/application (Duration: 168.2ms | Allocations: 1188)
+Completed 200 OK in 183ms (Views: 181.5ms | ActiveRecord: 0.0ms | Allocations: 7245)
+
+
+Started POST "/todo_items" for ::1 at 2019-08-09 18:43:19 -0400
+Processing by TodoItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"HdLjhQIqUigBo0uZi9ajB3g/BRwPkPoCVGAHhsXnz+HqnsQMkZjRQtJcDUm11lfht50h1MFql8jMHPznp+GHFA==", "todo_item"=>{"description"=>"another task"}, "commit"=>"Create Todo item"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todo_items_controller.rb:30:in `block in create'
+  [1m[36mTodoItem Create (76.6ms)[0m  [1m[32mINSERT INTO "todo_items" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "another task"], ["created_at", "2019-08-09 22:43:19.501382"], ["updated_at", "2019-08-09 22:43:19.501382"]]
+  ↳ app/controllers/todo_items_controller.rb:30:in `block in create'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todo_items_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/todo_items/2
+Completed 302 Found in 629ms (ActiveRecord: 79.1ms | Allocations: 5028)
+
+
+Started GET "/todo_items/2" for ::1 at 2019-08-09 18:43:20 -0400
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTodoItem Load (0.5ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/todo_items_controller.rb:67:in `set_todo_item'
+  Rendering todo_items/show.html.erb within layouts/application
+  Rendered todo_items/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 251)
+Completed 200 OK in 24ms (Views: 18.5ms | ActiveRecord: 0.5ms | Allocations: 6814)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:43:22 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 850)
+Completed 200 OK in 41ms (Views: 36.7ms | ActiveRecord: 0.2ms | Allocations: 6738)
+
+
+Started GET "/todo_items/new" for ::1 at 2019-08-09 18:43:24 -0400
+Processing by TodoItemsController#new as HTML
+  Rendering todo_items/new.html.erb within layouts/application
+  Rendered todo_items/_form.html.erb (Duration: 3.0ms | Allocations: 533)
+  Rendered todo_items/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 618)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.0ms | Allocations: 6518)
+
+
+Started POST "/todo_items" for ::1 at 2019-08-09 18:43:36 -0400
+Processing by TodoItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"4wUvNvCAAKRGhcRWfayjCsoOukAqr0kZT2iZpUqk/qIUSQi/YzKDzpV6goZDrFfsBayeiORVJNPXFGLEKKK2Vw==", "todo_item"=>{"description"=>"third task"}, "commit"=>"Create Todo item"}
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todo_items_controller.rb:30:in `block in create'
+  [1m[36mTodoItem Create (0.9ms)[0m  [1m[32mINSERT INTO "todo_items" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "third task"], ["created_at", "2019-08-09 22:43:36.016727"], ["updated_at", "2019-08-09 22:43:36.016727"]]
+  ↳ app/controllers/todo_items_controller.rb:30:in `block in create'
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todo_items_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/todo_items/3
+Completed 302 Found in 28ms (ActiveRecord: 10.7ms | Allocations: 2528)
+
+
+Started GET "/todo_items/3" for ::1 at 2019-08-09 18:43:36 -0400
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTodoItem Load (0.5ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/todo_items_controller.rb:67:in `set_todo_item'
+  Rendering todo_items/show.html.erb within layouts/application
+  Rendered todo_items/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 91)
+Completed 200 OK in 47ms (Views: 43.1ms | ActiveRecord: 0.5ms | Allocations: 6503)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:43:37 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.3ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 964)
+Completed 200 OK in 37ms (Views: 34.5ms | ActiveRecord: 0.3ms | Allocations: 6851)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:44:59 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.3ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 964)
+Completed 200 OK in 1414ms (Views: 1413.2ms | ActiveRecord: 0.3ms | Allocations: 10289)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:46:22 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.6ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 964)
+Completed 200 OK in 725ms (Views: 723.5ms | ActiveRecord: 0.6ms | Allocations: 10275)
+
+
+Started GET "/todo_items" for ::1 at 2019-08-09 18:46:36 -0400
+Processing by TodoItemsController#index as HTML
+  Rendering todo_items/index.html.erb within layouts/application
+  [1m[36mTodoItem Load (0.2ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/views/todo_items/index.html.erb:14
+  Rendered todo_items/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 964)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.2ms | Allocations: 6917)
+
+
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (37.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-09-04 13:11:06 -0400
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (30.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/adlaibradley/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.0.rc2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/adlaibradley/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.0.rc2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 237.9ms | Allocations: 490)
+Completed 200 OK in 1185ms (Views: 740.2ms | ActiveRecord: 0.0ms | Allocations: 2800)
+
+
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /Users/adlaibradley/.rbenv/versions/2.6.3/bin/rake:23)
+Started GET "/todo_item" for ::1 at 2019-09-04 13:31:57 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/todo_item"):
+  
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0.rc2) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "//todo_items/new" for ::1 at 2019-09-04 13:37:18 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TodoItemsController#new as HTML
+  Rendering todo_items/new.html.erb within layouts/application
+  Rendered todo_items/_form.html.erb (Duration: 539.0ms | Allocations: 4663)
+  Rendered todo_items/new.html.erb within layouts/application (Duration: 570.4ms | Allocations: 5012)
+Completed 200 OK in 5644ms (Views: 5562.5ms | ActiveRecord: 0.9ms | Allocations: 1348473)
+
+
+Started GET "/todo_items/new" for ::1 at 2019-09-04 13:37:27 -0400
+Processing by TodoItemsController#new as HTML
+  Rendering todo_items/new.html.erb within layouts/application
+  Rendered todo_items/_form.html.erb (Duration: 2.0ms | Allocations: 537)
+  Rendered todo_items/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 623)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 6481)
+
+
+Started GET "/todo_items/new" for ::1 at 2019-09-04 14:59:22 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TodoItemsController#new as HTML
+  Rendering todo_items/new.html.erb within layouts/application
+  Rendered todo_items/_form.html.erb (Duration: 2.6ms | Allocations: 531)
+  Rendered todo_items/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 616)
+Completed 200 OK in 1028ms (Views: 1026.8ms | ActiveRecord: 0.0ms | Allocations: 6455)
+
+
