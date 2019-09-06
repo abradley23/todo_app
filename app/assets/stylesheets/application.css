@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+ /* GENERAL */
+
+* {
+  box-sizing: border-box;
+  font-family: 'Khula', sans-serif;
+}
+
+h1 {
+  font-family: 'Lexend Deca', sans-serif;
+  color: Teal;
+}
+
+body {
+  background-color: tan;
+}
+
+.todo_tasks a, th {
+  color: white;
+}
+
+hr {
+  border: 1px solid teal;
+}
+
+th {
+  font-size: 18px;
+}
